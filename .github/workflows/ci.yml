@@ -1,0 +1,19 @@
+name: Minimal CI
+
+# Trigger the workflow on every push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Print success message
+      run: echo "Pipeline works successfully ✅"
